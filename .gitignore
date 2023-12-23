@@ -1,0 +1,56 @@
+# .NET
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+*.cache
+*.dll
+*.exe
+*.pdb
+*.nupkg
+*.snk
+*.vsp
+*.vspscc
+*.vssscc
+*.vssettings
+*.vsssuo
+*.csproj.user
+*.vbproj.user
+packages/
+TestResults/
+_ReSharper.*/
+*.ReSharper.*
+[Tt]est[Rr]esult*/
+*.DotSettings
+*.DotSettings.user
+build/
+*.sln.ide
+
+# Angular
+/node_modules
+/dist
+/*-lock.json
+*lock.json
+.env
+*.log
+
+# VS Code
+.vscode/
+
+# Temporary files
+*~
+*.swp
+*.swa
+*.tmp
+*.temp
+*.bak
+*.aux
+*.out
+
+# Others
+*.log
+*.sql
+*.sqlite
+.DS_Store
+Thumbs.db
