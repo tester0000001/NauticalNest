@@ -67,8 +67,9 @@ TODO
 The API is structured into namespaces, which group related endpoints. The following namespaces are available:
 
 
-- `/berth': Operations related to address entities.
-- `/ship': Operations for service entities.
+- `/berth': Operations related to berths .
+- `/ship': Operations for ships.
+- '/reservation': Operations for reservations (pairs ship+berth within a reserved timeframe.)
 - `/users': User-related operations.
 
 ## Accessing Endpoints
