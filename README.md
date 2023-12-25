@@ -12,17 +12,105 @@ Nautical Nest is a full-stack web application designed for managing ship berths.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-## Setup Instructions
-
-TODO
+These instructions will get you a copy of the project up and running on your local machine.
 
 ### Prerequisites
 - [.NET 6 SDK](https://dotnet.microsoft.com/download)
 - [Node.js](https://nodejs.org/)
 - [Angular CLI](https://angular.io/cli)
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+
+## Setup Instructions
+
+
+### Installing .NET 6 SDK on Ubuntu
+
+1. **Add Microsoft Package Repository:**
+- Open the terminal
+- Download the Microsoft package repository configuration package:
+   ```shell
+   wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+
+2. **Install the package:**
+
+   ```shell
+   sudo dpkg -i packages-microsoft-prod.deb
+
+3. **Remove the package file:**
+   ```shell
+   sudo dpkg -i packages-microsoft-prod.deb
+   rm packages-microsoft-prod.deb
+
+## Setting Up SQL Server with Docker
+
+### Docker Installation Guide
+Follow these steps to install Docker on your Ubuntu system:
+
+1. **Update the package list:**
+
+   ```shell
+   sudo apt-get update
+
+2. **Install packages to allow apt to use a repository over HTTPS:**
+
+   ```shell
+   sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+3. **Add Docker’s official GPG key:**
+
+   ```shell
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+
+4. **Set up the stable Docker repository:**
+
+   ```shell
+   sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+5. **Update the package list again:**
+
+   ```shell
+   sudo apt-get update
+
+6. **Install Docker CE, Docker-ce-cli and containerd.io :**
+
+   ```shell
+   sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+Install containerd.io and Docker CE:
+
+7. **Test your Docker installation by running the hello-world image:**
+   ```shell
+   sudo docker run hello-world
+
+This will download a test image and run it in a container. If you see a welcome message, Docker has been successfully installed.
+
+### Pull SQL Server Docker Image:
+
+1. **Pull the latest SQL Server image:**
+
+   ```shell
+   docker pull mcr.microsoft.com/mssql/server:2019-latest
+
+2. **Start SQL Server:**
+Run the SQL Server container using the Docker command. This will start an instance of SQL Server running in a container.
+   ```shell
+   docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Passw0rd" -p 1433:1433 --name sql1 -d mcr.microsoft.com/mssql/server:2019-latest
+
+Note: replace Passw0rd with a password of your choice.
+
+3. **Connect to SQL Server:**
+
+Connect to your SQL Server instance using a SQL client tool like 
+Azure Data Studio, 
+or SQL Server Management Studio. 
+
+Use the server address:    localhost, 
+               username:   sa, 
+               and the password you set.
+
+
+TODO other setups 
 
 
 ### Installing Dependencies 
