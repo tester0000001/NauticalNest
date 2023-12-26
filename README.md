@@ -109,21 +109,29 @@ Use the server address:    localhost,
                username:   sa, 
                and the password you set.
 
+### Pull SQL Server Docker Image:
 
+1. **Create a .NET Project:**
+Initialize a new .NET Web API project in project folder and change into the project directory:
+   ```shell
+   dotnet new webapi -n NauticalNest
+   cd NauticalNest
+
+2. **Add EF Core Packages:**
+Add the EF Core library and the SQL Server provider:
+   ```shell
+   dotnet add package Microsoft.EntityFrameworkCore
+   dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+### Build and Run :
+1. **Compile and run:**
+
+   ```shell
+   dotnet build
+   dotnet run
+
+ 
 TODO other setups 
-
-
-### Installing Dependencies 
-
-1. **Installation**
-   ```shell
-   sudo apt install something
-
-
-
-### Set up the Backend
-2. **Set up the Backend:**
-   ```shell
    
 
 ## Set up the Frontend
@@ -131,25 +139,6 @@ TODO other setups
 3. **Set up the Frontend**
    ```shell
    
-
-## Scripts
-
-4. **To use scripts install requests library**
-   ```shell
-   
-
-## Navigate to script folder and run script 
-
-5. **To use script run **
-   ```shell
-
-- `a_script_selector_script.py`: Script for selecting other scripts.
-
-
-6. **Deployment:**
-
-   ```shell
-   run
 
 ## Available Endpoints
 The API is structured into namespaces, which group related endpoints. The following namespaces are available:
