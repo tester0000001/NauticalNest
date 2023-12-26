@@ -5,8 +5,10 @@ public class User
     public string Username { get; set; }
     public byte[] PasswordHash { get; set; }
     public byte[] PasswordSalt { get; set; }
+    
+    // Role property to define user type
     public string Role { get; set; }
 
-    // Navigation property for relationships
+    // Link to a user that made the reservation
     public ICollection<Reservation> Reservations { get; set; }
 }
