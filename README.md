@@ -15,7 +15,7 @@ Nautical Nest is a full-stack web application designed for managing ship berths.
 These instructions will get you a copy of the project up and running on your local machine.
 
 ### Prerequisites
-- [.NET 6 SDK](https://dotnet.microsoft.com/download)
+- [.NET SDK](https://dotnet.microsoft.com/download)
 - [Node.js](https://nodejs.org/)
 - [Angular CLI](https://angular.io/cli)
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
@@ -40,6 +40,21 @@ These instructions will get you a copy of the project up and running on your loc
    ```shell
    sudo dpkg -i packages-microsoft-prod.deb
    rm packages-microsoft-prod.deb
+
+## Setting Up 
+1. **EF Core commands:**
+   ```shell
+      dotnet new tool-manifest
+      dotnet tool install dotnet-ef --version 7.0.0
+      cd Server
+      cd Data
+      dotnet dotnet-ef
+      dotnet ef migrations add InitialCreate
+      dotnet ef database update
+
+
+The InitialCreate migration will scaffold a migration script with the necessary database commands to create your schema based on the current model 
+      
 
 ## Setting Up SQL Server with Docker
 
