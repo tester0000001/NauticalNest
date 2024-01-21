@@ -156,19 +156,57 @@ TODO other setups
    
 
 ## Available Endpoints
-The API is structured into namespaces, which group related endpoints. The following namespaces are available:
 
+The API is structured into namespaces, grouping related endpoints for ease of use and organization. Below are the available namespaces with their respective operations:
 
-- `/berth': Operations related to berths .
-- `/ship': Operations for ships.
-- '/reservation': Operations for reservations (pairs ship+berth within a reserved timeframe.)
-- `/users': User-related operations.
+### Berths (`/berths`)
+Operations related to berths in the ship berth management system.
+
+- `GET /berths`: Retrieves a list of all berths.
+- `GET /berths/{id}`: Retrieves a specific berth by its ID.
+- `POST /berths`: Creates a new berth.
+- `PUT /berths/{id}`: Updates a specific berth by its ID.
+- `DELETE /berths/{id}`: Deletes a specific berth by its ID.
+
+### Ships (`/ships`)
+Operations for managing ships.
+
+- `GET /ships`: Retrieves a list of all ships.
+- `GET /ships/{id}`: Retrieves a specific ship by its ID.
+- `POST /ships`: Creates a new ship.
+- `PUT /ships/{id}`: Updates a specific ship by its ID.
+- `DELETE /ships/{id}`: Deletes a specific ship by its ID.
+
+### Reservations (`/reservations`)
+Operations for managing reservations which associate ships with berths within a reserved timeframe.
+
+- `GET /reservations`: Retrieves all reservations.
+- `GET /reservations/{id}`: Retrieves a specific reservation by its ID.
+- `POST /reservations`: Creates a new reservation.
+- `PUT /reservations/{id}`: Updates a specific reservation by its ID.
+- `DELETE /reservations/{id}`: Deletes a specific reservation by its ID.
+
+### Users (`/users`)
+User-related operations, including authentication and user management.
+
+- `GET /users`: Retrieves a list of all users.
+- `GET /users/{id}`: Retrieves a specific user by their ID.
+- `POST /users/register`: Registers a new user.
+- `POST /users/login`: Authenticates a user and returns a token.
+- `PUT /users/{id}`: Updates a specific user by their ID.
+- `DELETE /users/{id}`: Deletes a specific user by their ID.
 
 ## Accessing Endpoints
-You can access the API endpoints using tools like curl or Postman. For example:
 
-   '''shell
-   curl -u username:password -X GET http://localhost:5000/berths/ 
+You can access the API endpoints using tools like `curl` or Postman. For example:
+
+1. **curl example**
+   ```shell
+   curl -u username:password -X GET http://localhost:5000/berths/
+   curl -u username:password -X GET http://localhost:5000/berths/{id}
+   curl -u username:password -X DELETE http://localhost:5000/ships/{id}
+   curl -u username:password -X POST http://localhost:5000/users/register
+   curl -u username:password -X PUT http://localhost:5000/reservations/{id}
 
 
 This command retrieves all berths if you replace username:password with valid credentials.
